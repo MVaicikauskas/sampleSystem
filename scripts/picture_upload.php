@@ -1,4 +1,6 @@
 <?php
+var_dump ($_POST);
+
 $title1=$title2=$title3=$title4=$color= "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($check !== false) {
                 
             } else {
-                
+                // echo "test";
                 include 'gallery_error.php';
                 die;
                 
@@ -43,25 +45,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //upload file
 
             if (!move_uploaded_file($tempFile, $targetFile)) {
+                echo $targetFile;
                 include 'gallery_error.php';
                 die;
             }
             $counter++;
 
         }
-        $title1=$_POST['imageTitle1'];
-        $title2=$_POST['imageTitle2'];
-        $title3=$_POST['imageTitle3'];
-        $title4=$_POST['imageTitle4'];
+        $title1=$_POST['name1'];
+        $title2=$_POST['name2'];
+        $title3=$_POST['name3'];
+        $title4=$_POST['name4'];
         $color = "bg-".$_POST['color'];
         include 'gallery.php';
     } else {
-        
+        // echo "test";
         include 'gallery_error.php';
         die;
     }
 
 } else {
     
-    include 'gallery.php';
+    include '../views/gallery.php/';
 }

@@ -4,7 +4,7 @@ include '../layout/header.php';
 
 <div class="container">
     <h2>Picture upload form</h2>
-    <form action="http://192.168.64.2/Intro/dist/php/sampleSystem/views/gallery.php" method="POST" enctype="multipart/form-data">
+    <form action="http://192.168.64.2/Intro/dist/php/sampleSystem/scripts/picture_upload.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="formFile" class="form-label">Choose picture to upload</label>
             <input class="form-control" type="file" id="formFile1" name="formFile1">
