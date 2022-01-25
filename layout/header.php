@@ -29,6 +29,16 @@
                 <li class="nav-item">
                     <a href="http://192.168.64.2/Intro/dist/php/sampleSystem/views/gallery.php/" class="nav-link">Gallery</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calculator
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://192.168.64.2/Intro/dist/php/sampleSystem/kmi.php">KMI</a></li>
+                        <li><a class="dropdown-item" href="http://192.168.64.2/Intro/dist/php/sampleSystem/converter.php">Converter</a></li>
+                        
+                    </ul>
+                </li>
             </ul>
             </div>
             <div class="collapse navbar-collapse" id="">    
