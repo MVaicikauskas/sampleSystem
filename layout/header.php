@@ -10,19 +10,16 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg white shadow-sm">
-        <div class="container">
-            <a href="#" class="navbar-brand">Sample System</a>
-        </div>
-        <div class="collapse navbar-collapse" id="">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+     <div class="container">
+         <a href="http://localhost/Intro/dist/php/sampleSystem/" class="navbar-brand">Sample System</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarItems">
             <!-- menu items -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    
-                </li>
-                &nbsp;
-                &nbsp;
-                &nbsp;
+                
                 <li class="nav-item">
                     <a href="http://192.168.64.2/Intro/dist/php/sampleSystem/views/file_upload.php/" class="nav-link">File upload form</a>
                 </li>

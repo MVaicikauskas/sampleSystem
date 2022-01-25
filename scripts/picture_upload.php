@@ -1,75 +1,67 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(isset($_FILES['formFile1'])){
-        $targetDir1 = "http://192.168.64.2/Intro/dist/php/sampleSystem/uploads/";
-        $targetFile1 = $targetDir1.basename($_FILES['formFile1']['name']);
-        $uploadValid1 = 1;
-        $imageFileType1 = strtolower(pathinfo($targetFile1, PATHINFO_EXTENSION));
-        $pictureName1 = testInput($_POST['name1']);
+$title1=$title2=$title3=$title4=$color= "";
 
-        if($uploadValid1 == 0){
-            echo "File is not uploaded";
-        } else {
-            if(move_uploaded_file($_FILES['formFile1']['tmp_name'],$targetFile1)){ 
-                echo "File was uploaded!";
-            } else{
-                echo "Error occured, please try again!";
-            };
-        };
-    };
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (!empty($_FILES['formFile1']) && !empty($_FILES['formFile2']) && !empty($_FILES['formFile3']) && !empty($_FILES['formFile4']) && !empty($_POST['name1']) && !empty($_POST['name2']) && !empty($_POST['name3']) && !empty($_POST['name4'])) {
+        $counter = 1;
+        
+        foreach ($_FILES as $image) {
+            
+            $targetDir = "../uploads/";
+            $imageName = "image" . $counter . ".jpg";
+            $targetFile = $targetDir . basename($image['name']);
+            
+            $uploadValid = 1;
+            $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+            $targetFile = $targetDir . $imageName;
+            $tempFile = $image['tmp_name'];
+            
+            $check = getimagesize($tempFile);
+            if ($check !== false) {
+                
+            } else {
+                
+                include 'gallery_error.php';
+                die;
+                
+            }
 
-    if(isset($_FILES['formFile2'])){
-        $targetDir2 = "../uploads/";
-        $targetFile2 = $targetDir2.basename($_FILES['formFile2']['name']);
-        $uploadValid2 = 1;
-        $imageFileType2 = strtolower(pathinfo($targetFile2, PATHINFO_EXTENSION));
-        $pictureName2 = testInput($_POST['name2']);
+            //limit file size
+            // if ($_FILES['pictureToUpload']['size'] > 1000000) {
+            //     echo "File is too large";
+            //     $uploadValid = 0;
+            // }
 
-        if($uploadValid2 == 0){
-            echo "File is not uploaded";
-        } else {
-            if(move_uploaded_file($_FILES['formFile2']['tmp_name'],$targetFile2)){ 
-                echo "File was uploaded!";
-            } else{
-                echo "Error occured, please try again!";
-            };
-        };
-    };
+            //check if file extension is accepted
+            $extensions = ["jpg"];
 
-    if(isset($_FILES['formFile3'])){
-        $targetDir3 = "../uploads/";
-        $targetFile3 = $targetDir3.basename($_FILES['formFile3']['name']);
-        $uploadValid3 = 1;
-        $imageFileType3 = strtolower(pathinfo($targetFile3, PATHINFO_EXTENSION));
-        $pictureName3 = testInput($_POST['name3']);
+            if (in_array($imageFileType, $extensions) === false) {
+                include 'gallery_error.php';
+                die;
+            }
 
-        if($uploadValid == 0){
-            echo "File is not uploaded";
-        } else {
-            if(move_uploaded_file($_FILES['formFile3']['tmp_name'],$targetFile3)){ 
-                echo "File was uploaded!";
-            } else{
-                echo "Error occured, please try again!";
-            };
-        };
-    };
+            //upload file
 
-    if(isset($_FILES['formFile4'])){
-        $targetDir4 = "../uploads/";
-        $targetFile4 = $targetDir4.basename($_FILES['formFile4']['name']);
-        $uploadValid4 = 1;
-        $imageFileType4 = strtolower(pathinfo($targetFile4, PATHINFO_EXTENSION));
-        $pictureName4 = testInput($_POST['name4']);
+            if (!move_uploaded_file($tempFile, $targetFile)) {
+                include 'gallery_error.php';
+                die;
+            }
+            $counter++;
 
-        if($uploadValid4 == 0){
-            echo "File is not uploaded";
-        } else {
-            if(move_uploaded_file($_FILES['formFile4']['tmp_name'],$targetFile4)){ 
-                echo "File was uploaded!";
-            } else{
-                echo "Error occured, please try again!";
-            };
-        };
-    };
-};
-?>
+        }
+        $title1=$_POST['imageTitle1'];
+        $title2=$_POST['imageTitle2'];
+        $title3=$_POST['imageTitle3'];
+        $title4=$_POST['imageTitle4'];
+        $color = "bg-".$_POST['color'];
+        include 'gallery.php';
+    } else {
+        
+        include 'gallery_error.php';
+        die;
+    }
+
+} else {
+    
+    include 'gallery.php';
+}
