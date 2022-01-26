@@ -16,15 +16,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $color = 'success';
 
     } else{
-        $err = 'Wrong or wrongly chosen measurement units!!!';
+        $err = 'Wrongly chosen measurement units!!!';
         $color = 'danger';
     }
 }
 ?>
 
 <form action="" method="POST">
-    <div class="container mt-3">
-        <label for="measure1" class="form-control">convert from:</label>
+    <div class="container mt-3 bg-indigo" >
+        <label for="measure1" class="">convert from:</label>
         <div class="mb-3 form-check">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="measure1" value="meters1" name="meters1">
@@ -51,12 +51,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 <label class="form-check-label" for="exampleCheck1">Farenheit</label>
             </div>
         </div>
-        <label for="amount" class="form-control">Amount:</label>
+        <label for="amount" class="indigo">Amount:</label>
         <input type="text" class="form-control mb-3" name="amount">
     </div>
     <hr>
     <div class="container">
-        <label for="measure2" class="form-control">convert to:</label>
+        <label for="measure2" class="">convert to:</label>
         <div class="mb-3 form-check">
         <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="measure2" value="meters2" name="meters2">
