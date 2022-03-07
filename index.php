@@ -1,8 +1,8 @@
 <?php
 include 'layout/header.php';
 
-$usernameValue = $emailValue = $passError = '';
-if($_GET){
+$usernameValue = $emailValue = $passError = "";
+if ($_GET) {
     $usernameValue = $_GET['username'];
     $emailValue = $_GET['email'];
     $passError = $_GET['error'];
@@ -10,43 +10,35 @@ if($_GET){
 
 ?>
 
-
-   
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card bg-light mb-8">
-                <div class="card-header">Sign Up</div>
-                <div class="card-body">
-                   <form action="http://192.168.64.2/Intro/dist/php/sampleSystem/scripts/register.php" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name" name="fname">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last Name" name="lname">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="your@email.com" name="email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" name="password">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword">
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="avatar" >Upload your avatar</label>
-                            <input type="file" class="form-control-file" name="avatar">
-                        </div> -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                   </form>
+            <h2>Please fill registration form!</h2>
+            <form action="scripts/register.php" method="POST">
+                <div class="form-floating my-2">
+                    <input type="text" name="username" class="form-control" required
+                        value="<?php echo $usernameValue ?>">
+                    <label for="username">Username</label>
                 </div>
-            </div>
+                <div class="form-floating my-2">
+                    <input type="email" class="form-control" name="email" required value="<?php echo $emailValue ?>">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating my-2">
+                    <input type="password" name="password" class="form-control" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-floating my-2">
+
+                    <input type="password" name="confirmPassword" class="form-control" required>
+                    <span class="badge bg-danger"><?php echo $passError ?></span>
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary">Register</button>
+            </form>
         </div>
     </div>
 </div>
 
+<?php include 'layout/footer.php' ?>
 
-<?php
-include 'layout/footer.php';
-?>
