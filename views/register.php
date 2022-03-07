@@ -1,24 +1,12 @@
-<?php
-include 'layout/header.php';
+<?php include '../layout/header.php' ?>
 
-$usernameValue = $emailValue = $passError = '';
-if($_GET){
-    $usernameValue = $_GET['username'];
-    $emailValue = $_GET['email'];
-    $passError = $_GET['error'];
-}
-
-?>
-
-
-   
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-light mb-8">
                 <div class="card-header">Sign Up</div>
                 <div class="card-body">
-                   <form action="http://192.168.64.2/Intro/dist/php/sampleSystem/scripts/register.php" method="POST" enctype="multipart/form-data">
+                   <form action="http://192.168.64.2/Intro/dist/php/sampleSystem/scripts/signUp.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="First Name" name="fname">
                         </div>
@@ -34,10 +22,10 @@ if($_GET){
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword">
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="avatar" >Upload your avatar</label>
                             <input type="file" class="form-control-file" name="avatar">
-                        </div> -->
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                    </form>
                 </div>
@@ -47,6 +35,6 @@ if($_GET){
 </div>
 
 
-<?php
-include 'layout/footer.php';
-?>
+
+
+<?php include '../layout/footer.php' ?>
