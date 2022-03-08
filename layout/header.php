@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
      <div class="container">
-         <a href="http://localhost/Intro/dist/php/sampleSystem/" class="navbar-brand">Sample System</a>
+         <a href="http://localhost/Intro/dist/php/sampleSystem/index.php" class="navbar-brand">Sample System</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
          </button>
@@ -34,7 +34,7 @@
                         Calculator
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="http://192.168.64.2/Intro/dist/php/sampleSystem/kmi.php">KMI</a></li>
+                        <li><a class="dropdown-item" href="http://192.168.64.2/Intro/dist/php/sampleSystem/views/users.php">USERS</a></li>
                         <li><a class="dropdown-item" href="http://192.168.64.2/Intro/dist/php/sampleSystem/converter.php">Converter</a></li>
                         
                     </ul>
@@ -49,6 +49,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="http://192.168.64.2/Intro/dist/php/sampleSystem/views/register.php" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://192.168.64.2/Intro/dist/php/sampleSystem/scripts/logout.php" class="nav-link">Log out</a>
                 </li>
             </ul>
         </div>

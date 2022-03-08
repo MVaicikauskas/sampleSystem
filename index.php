@@ -1,16 +1,17 @@
 <?php
 include 'layout/header.php';
+header("Location: views.login.php");
 
-$usernameValue = $emailValue = $passError = "";
-if ($_GET) {
-    $usernameValue = $_GET['username'];
-    $emailValue = $_GET['email'];
-    $passError = $_GET['error'];
-}
+// $usernameValue = $emailValue = $passError = "";
+// if ($_GET) {
+//     $usernameValue = $_GET['username'];
+//     $emailValue = $_GET['email'];
+//     $passError = $_GET['error'];
+// }
 
 ?>
 
-<div class="container py-4">
+<!-- <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h2>Please fill registration form!</h2>
@@ -38,7 +39,7 @@ if ($_GET) {
             </form>
         </div>
     </div>
-</div>
+</div> -->
 
-<?php include 'layout/footer.php' ?>
+<?php include 'layout/footer.php' ?> 
 

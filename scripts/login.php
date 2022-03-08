@@ -1,5 +1,6 @@
 <?php
 
+
 require_once("../db_connection.php");
 
 // susirenkame login info is formos
@@ -25,11 +26,13 @@ $result = $querry->fetch();
 
 if($result){
     // kodas
+    session_start();
     $dbPasswordHash = $result['password'];
 
     // tikriname slaptazodi
     if(password_verify($password, $dbPasswordHash)){
-        echo "Log In successful";
+        $_SESSION['username'] = $result['first_name'];
+        header('Location: ../views/users.php');
     } else {
         echo "password is incorrect";
     }

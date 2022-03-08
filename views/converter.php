@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: login.php");
+}
  include 'layout/header.php';
  $mf = $fm = $kgpnd = $pndkg = $cf = $fc = $mkm = $kmm = $ftm = $mtf = $kmml = $mlkm = $err = $mfmess = $fmmess = $kgpndmess = $pndkgmess = $cfmess = $fcmess = $mkmmess = $kmmmess = $ftmmess = $mtfmess = $kmmlmess = $mlkmmess  = $color = '';
 
